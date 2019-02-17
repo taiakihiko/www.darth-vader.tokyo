@@ -1,6 +1,14 @@
 version: 2
 jobs:
+  
   build:
     machine: true
     steps:
       - run: echo Hello World
+  
+  deploy:
+    - run: echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > ${HOME}/gcloud-service-key.json
+    - run: sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
+    - run: gcloud auth activate-service-account $ACCOUNT --key-file ${HOME}/gcloud-service-key.json
+    - run: ssh tai_akihiko_private@www.darth-vader.tokyo -C /var/www/html/www.darth-vader.tokyo/deploy.sh
+
