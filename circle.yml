@@ -14,3 +14,9 @@ jobs:
       - run: gcloud auth activate-service-account $ACCOUNT --key-file ${HOME}/gcloud-service-key.json
       - run: ssh tai_akihiko_private@www.darth-vader.tokyo -C /var/www/html/www.darth-vader.tokyo/deploy.sh
 
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build
+    - deploy
