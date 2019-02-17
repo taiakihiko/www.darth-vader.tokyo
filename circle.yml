@@ -4,3 +4,7 @@ jobs:
     machine: true
     steps:
       - echo Hello World
+  build:
+    machine: true
+    steps:
+      - echo Hello World
