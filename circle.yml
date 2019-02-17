@@ -6,7 +6,6 @@ jobs:
       - echo Hello World
   build:
     machine: true
-    steps:
-      - run:
-        name: test
-        command: echo Hello World
+    step:
+      name: test
+      command: echo Hello World
