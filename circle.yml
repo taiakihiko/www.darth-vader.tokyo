@@ -3,9 +3,12 @@ jobs:
   test:
     machine: true
     steps:
-      - echo Hello World
+      - run:
+        name: test
+        command: echo Hello World
   build:
     machine: true
-    step:
-      name: test
-      command: echo Hello World
+    steps:
+      - run:
+        name: test
+        command: echo Hello World
