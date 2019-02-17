@@ -7,4 +7,6 @@ jobs:
   build:
     machine: true
     steps:
-      - echo Hello World
+      - run:
+        name: test
+        command: echo Hello World
