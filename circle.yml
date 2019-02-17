@@ -1,11 +1,5 @@
 version: 2
 jobs:
-  test:
-    machine: true
-    steps:
-      - run:
-        name: test
-        command: echo Hello World
   build:
     machine: true
     steps:
